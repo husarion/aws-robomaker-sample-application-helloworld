@@ -55,7 +55,7 @@ then
     docker exec $EXISTING_CONTAINER_ID apt update
     docker exec $EXISTING_CONTAINER_ID apt upgrade -y
     docker exec $EXISTING_CONTAINER_ID pip3 install -U colcon-bundle
-    docker exec $EXISTING_CONTAINER_ID 'echo "deb [arch=armhf] http://packages.ros.org/ros2/ubuntu bionic main" > /etc/apt/sources.list.d/ros2-latest.list'
+    docker exec $EXISTING_CONTAINER_ID bash -c 'echo "deb [arch=armhf] http://packages.ros.org/ros2/ubuntu bionic main" > /etc/apt/sources.list.d/ros2-latest.list'
     docker exec $EXISTING_CONTAINER_ID apt update
     docker exec $EXISTING_CONTAINER_ID apt install ros-dashing-ros-base
 fi
